@@ -1,0 +1,125 @@
+Q1. 
+1.	We create an instance and provide security group -> default ssh and http
+2.	Yum install httpd
+3.	Mkdir /var/www/html/
+4.	Create a index.html file -> cat index.html
+5.	Systemctl start httpd
+6.	Systemctl enable httpd
+7.	Run public ip in tab
+8.	We create volume of 
+9.	5GB
+10.	We check in terminal  lsblk
+11.	We give filesystem  mkfs.ext4 /dev/xvdb
+12.	We make a directory to mount it
+13.	We mount  mount /dev/xvdb /mount
+14.	We go inside mount and created 10 files
+
+Q2.
+1.	We created an ec2 instance at region Mumbai
+2.	Created a volume and attach to the instance
+3.	We check if volume is attached
+4.	We provide filesystem to the volume   mkfs.ext4
+5.	We mount it into the system 
+6.	Create few files
+7.	Now we create a snapshot for this volume
+8.	Copy the snapshot the Singapore region
+
+Move to Singapore Region
+9.	Check if snap is available
+10.	Create volume from snap
+11.	Create an instance and attach the volume
+12.	mount the volume and check the files
+
+
+
+
+
+Q3.
+AT MUMBAI REGION
+1.	Create an instance
+2.	Install httpd
+3.	Create an html file
+4.	Start httpd
+5.	See if web is running
+6.	Create AMI
+7.	Copy AIM and share it to Singapore region
+
+MOVE TO SINGAPORE REGION
+8.	Create instance from AMI present in the region
+9.	Run public ip to check if web is running
+
+Q5.
+1.	We create a vpc, igw,subnet,routes  edit route  add routes (gateway)  subnet asso.
+2.	We create instance for web
+a.	We need to change the vpc
+b.	Enable auto assign ip
+c.	Security group – ssh , http, icmp
+d.	Save
+3.	Similary we create instance for database
+NOTE : check subnet while selecting
+4.	We check in terminal by creating a html file and running it on web
+a.	Yum install httpd
+b.	cd /var/www/html/
+c.	Create a index.html file -> cat index.html
+d.	Systemctl start httpd
+e.	Systemctl enable httpd
+
+
+
+
+Q6. 
+At Mumbai
+1.	Create a vpc,igw,subnet(public),routetableedit routeassociate subnet,
+2.	Create instance from vpc
+3.	Security group  ssh,http,icmp
+
+4.	At terminal 
+
+a.	Give passwd to root
+b.	Edit sshd_config  
+c.	Restart and enable sshd
+i.	Create peering in console
+ii.	Edit routetable  Peering connection
+d.	Rsync <fileName> root@ip_Address:/tmp
+
+At Singapore
+
+5.	Create a vpc,igw,subnet(public),routetableedit routeassociate subnet,
+6.	Create instance from vpc
+7.	Security group  ssh,http,icmp
+
+8.	At terminal 
+
+a.	Give passwd to root
+b.	Edit sshd_config  
+c.	Restart and enable sshd
+i.	Create peering in console
+ii.	Edit routetable  Peering connection
+d.	Rsync <fileName> root@ip_Address:/tmp
+
+ 
+Q 7.
+1.	Open AWS
+2.	On profile, open security credentials
+3.	Create access key
+4.	Download .csv
+5.	Open excel
+
+Q8.
+
+Q9. 
+1.	Create  2 instance
+2.	We create a NFS storage
+3.	We manage network and share same security group
+
+AT machine 1
+4.	Yum install nfs-utils
+5.	We create directory /efs
+6.	We mount using attach link
+7.	Create files
+
+AT machine 2
+8.	Yum install nfs-utils
+9.	We create directory /efs
+10.	We mount using attach link 
+11.	Check files and cross creating another file(check if reflecting on another machine)
