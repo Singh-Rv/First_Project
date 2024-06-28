@@ -1,0 +1,26 @@
+https://cloudkul.com/blog/mounting-s3-bucket-linux-ec2-instance/
+first create a s3 bucket with public excess and add some files in the bucket.
+then create a instance in the ubuntu 
+
+sudo apt update
+sudo apt upgrade
+sudo su -
+apt install s3fs
+
+then create user in iam user with full access of s3 bucket.
+then generate access and secret key
+
+then run this in the terminal
+vim /etc/passwd-s3fs
+here paste access and secret key
+chmod 640 /etc/passwd-s3fs
+s3fs lab4-s3bucket /mnt -o passwd_file=/etc/passwd-s3fs
+df -h
+
+cd /mnt
+ll
+cd/oxer-html/
+ll
+
+now it has all the files.
+
